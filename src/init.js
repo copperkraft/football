@@ -8,10 +8,14 @@ require.config({
         appViewModel: "viewModels/appViewModel",
         leagueModel: "models/league.model",
         league: "components/league/league",
+        teams: "components/teams/teams",
+        router: "components/router/router"
     }
 });
 
-require(['ko', 'appViewModel', 'league'], function(ko, appViewModel, league) {
+require(['ko', 'appViewModel', 'league', 'teams', 'router'], function(ko, appViewModel, league, teams, router) {
     ko.components.register('league', league);
+    ko.components.register('teams', teams);
+    ko.components.register('router', router);
     ko.applyBindings(new appViewModel('leagues'));
 });

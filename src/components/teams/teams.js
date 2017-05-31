@@ -1,8 +1,8 @@
 /**
  * Created by uladzimir.yakushkin on 31-May-17.
  */
-define(['ko', 'text!./league.html', 'leagueModel'], function(ko, template, leagueModel) {
-    function LeagueViewModel() {
+define(['ko', 'text!./teams.html', 'leagueModel'], function(ko, template, leagueModel) {
+    function TeamsViewModel() {
         this.leagues = leagueModel.list;
         this.selectedLeagueName = ko.observable(leagueModel.list()[0]);
 
@@ -11,5 +11,5 @@ define(['ko', 'text!./league.html', 'leagueModel'], function(ko, template, leagu
         }, this);
     }
 
-    return { viewModel: LeagueViewModel, template: template };
+    return { viewModel: TeamsViewModel, template: template };
 });
