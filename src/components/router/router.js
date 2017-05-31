@@ -3,7 +3,7 @@
  */
 define(['ko', 'text!./router.html'], function(ko, template) {
     function RouterViewModel() {
-        let routedComponents = ko.observableArray([]);
+        let routedComponents = ko.observable({});
         function route (path, component) {
             routedComponents[path] = {component: component};
         }

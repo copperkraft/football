@@ -7,6 +7,7 @@ require.config({
         text: 'lib/text',
         appViewModel: "viewModels/appViewModel",
         leagueModel: "models/league.model",
+        teamModel: "models/team.model",
         league: "components/league/league",
         teams: "components/teams/teams",
         router: "components/router/router"

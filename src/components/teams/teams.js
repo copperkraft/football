@@ -1,13 +1,13 @@
 /**
  * Created by uladzimir.yakushkin on 31-May-17.
  */
-define(['ko', 'text!./teams.html', 'leagueModel'], function(ko, template, leagueModel) {
+define(['ko', 'text!./teams.html', 'leagueModel', 'teamModel'], function(ko, template, leagueModel, teamModel) {
     function TeamsViewModel() {
         this.leagues = leagueModel.list;
         this.selectedLeagueName = ko.observable(leagueModel.list()[0]);
 
-        this.selectedLeague = ko.computed(function() {
-            return leagueModel.loadLeague(this.selectedLeagueName());
+        this.teams = ko.computed(function() {
+            return 0;
         }, this);
     }
 

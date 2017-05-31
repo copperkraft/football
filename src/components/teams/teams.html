@@ -1,4 +1,16 @@
-<div class="teams">
-    <h1>some league teams</h1>
-    <select data-bind="options: leagues(), value: selectedLeagueName"></select>
+<div class="league">
+    <h1 class="league__title" data-bind="with: selectedLeague()">
+        <span data-bind="text: leagueCaption"></span> teams
+    </h1>
+    <select class="select" data-bind="options: leagues(), value: selectedLeagueName"></select>
+
+    <div data-bind="with: selectedLeague()">
+        <ul class="team-list" data-bind="foreach: standing">
+            <li class="team-list__element" data-bind="with: ">
+                <div class="team-list__name"></div>
+                <div class="team-list__shortname"></div>
+                <div class="team-list__value"></div>
+            </li>
+        </ul>
+    </div>
 </div>
