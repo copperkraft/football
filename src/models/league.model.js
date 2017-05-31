@@ -30,7 +30,6 @@ define(['ko'], function(ko) {
                         )[0].id;
                     }
                 }
-                console.log(leagueIds());
             }
         };
         xmlHttp.open("GET", 'http://api.football-data.org/v1/competitions/', true);
@@ -49,17 +48,19 @@ define(['ko'], function(ko) {
             "French League 1"
         ]),
         loadLeague: leagueTitle => {
+            let response = ko.observable();
             let xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState === 4 && xmlHttp.status === 200)
                 {
-                    let leagueTable = JSON.parse(xmlHttp.responseText);
-                    console.log(leagueTable);
+                    response(JSON.parse(xmlHttp.responseText));
+                    console.log(response);
                 }
             };
             xmlHttp.open("GET", `http://api.football-data.org/v1/competitions/${426}/leagueTable`, true);
             xmlHttp.setRequestHeader("x-auth-token", 'ea247d3972de4c13b075ae1b61b88d72');
             xmlHttp.send(null);
+            return response;
         }
     }
 });

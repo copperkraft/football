@@ -1,12 +1,18 @@
 <div class="league">
     <h1>some league table</h1>
-    <select data-bind="options: leagues()">
-    <table>
+    <select data-bind="options: leagues()"></select>
+    <table data-bind="with: selectedLeague">
         <thead>
         <tr>
-            <th>qwfdsfs</th>
-            <th>sadsdasdasd asdasd asdas</th>
+            <th>Position</th>
+            <th>team</th>
         </tr>
         </thead>
+        <tbody data-bind="foreach: standing">
+        <tr>
+            <td data-bind="text: position"></td>
+            <td data-bind="text: teamName"></td>
+        </tr>
+        </tbody>
     </table>
 </div>
