@@ -54,10 +54,10 @@ define(['ko'], function(ko) {
                 if (xmlHttp.readyState === 4 && xmlHttp.status === 200)
                 {
                     response(JSON.parse(xmlHttp.responseText));
-                    console.log(response);
                 }
             };
-            xmlHttp.open("GET", `http://api.football-data.org/v1/competitions/${426}/leagueTable`, true);
+
+            xmlHttp.open("GET", `http://api.football-data.org/v1/competitions/${leagueIds()[leagueTitle]}/leagueTable`, true);
             xmlHttp.setRequestHeader("x-auth-token", 'ea247d3972de4c13b075ae1b61b88d72');
             xmlHttp.send(null);
             return response;

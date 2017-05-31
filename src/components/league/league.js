@@ -4,12 +4,11 @@
 define(['ko', 'text!./league.html', 'leagueModel'], function(ko, template, leagueModel) {
     function LeagueViewModel(params) {
         this.leagues = leagueModel.list;
-        this.selectedLeagueName = ko.observable(leagueModel.list[0]);
-        this.selectedLeague = ko.observable();
+        this.selectedLeagueName = ko.observable(leagueModel.list()[0]);
 
-        this.selectedLeague = leagueModel.loadLeague(this.selectedLeagueName());
-        console.log(this.selectedLeague());
-        setTimeout(console.log, 4000, this.selectedLeague())
+        this.selectedLeague = ko.computed(function() {
+            return leagueModel.loadLeague(this.selectedLeagueName());
+        }, this);
     }
 
     return { viewModel: LeagueViewModel, template: template };

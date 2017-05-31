@@ -1,7 +1,7 @@
 <div class="league">
     <h1>some league table</h1>
-    <select data-bind="options: leagues()"></select>
-    <table data-bind="with: selectedLeague">
+    <select data-bind="options: leagues(), value: selectedLeagueName"></select>
+    <table data-bind="with: selectedLeague()">
         <thead>
         <tr>
             <th>Position</th>
