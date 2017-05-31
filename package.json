@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/copperkraft/football/issues"
   },
-  "homepage": "https://github.com/copperkraft/football#readme"
+  "homepage": "https://github.com/copperkraft/football#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }

@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>football app</title>
-    <script type="text/javascript" data-main="js/init.js" src="js/lib/require.js"></script>
-    <script type="text/html" id="leagues">
-        <h1 data-bind="text: page"></h1>
-    </script>
+    <script type="text/javascript" data-main="src/init.js" src="src/lib/require.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div data-bind="visible: (page() == 'leagues'), template: {name: 'leagues'}"></div>
-
-
+<league></league>
 </body>
 </html>
