@@ -1,0 +1,49 @@
+.teams {
+    padding: 2em;
+    font-family: "Segoe UI", sans-serif;
+
+    .teams__title {
+        padding-bottom: 1em;
+        font-size: 35px;
+    }
+}
+
+.team-list {
+    border: 1px solid #888888;
+    border-radius: 1em;
+    display: inline-block;
+    width: 40%;
+
+    .team-list__element {
+        padding: 1em;
+
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+
+        border-bottom: 1px solid #888888;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    .team-list__name {
+        font-size: 20px;
+        color: #888888;
+    }
+    .team-list__image {
+        width: 5em;
+        float: left;
+        margin-right: 1em;
+    }
+    .team-list__favorite {
+        float: right;
+        border-radius: 1em;
+        padding: 0.5em;
+        font-size: 15px;
+        color: #000000;
+        background: #eeeeee;
+    }
+}

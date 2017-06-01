@@ -61,6 +61,22 @@ define(['ko'], function(ko) {
             xmlHttp.setRequestHeader("x-auth-token", 'ea247d3972de4c13b075ae1b61b88d72');
             xmlHttp.send(null);
             return response;
+        },
+        loadTeams: leagueTitle => {
+            let response = ko.observable();
+            let xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState === 4 && xmlHttp.status === 200)
+                {
+                    response(JSON.parse(xmlHttp.responseText));
+                }
+            };
+
+            xmlHttp.open("GET", `http://api.football-data.org/v1/competitions/${leagueIds()[leagueTitle]}/teams`, true);
+            xmlHttp.setRequestHeader("x-auth-token", 'ea247d3972de4c13b075ae1b61b88d72');
+            xmlHttp.setRequestHeader("x-response-control", 'minified');
+            xmlHttp.send(null);
+            return response;
         }
     }
 });

@@ -24,6 +24,8 @@ define(['ko', 'text!./router.html'], function(ko, template) {
         this.page = ko.computed(function () {
             if (routedComponents[this.url()]) {
                 return this.url();
+            } else {
+                location.hash = 'league';
             }
         }, this);
     }

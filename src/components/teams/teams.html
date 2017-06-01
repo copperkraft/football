@@ -1,15 +1,25 @@
 <div class="league">
-    <h1 class="league__title" data-bind="with: selectedLeague()">
-        <span data-bind="text: leagueCaption"></span> teams
-    </h1>
+    <h1 class="league__title"><span data-bind="text: selectedLeagueName()"></span> teams</h1>
     <select class="select" data-bind="options: leagues(), value: selectedLeagueName"></select>
 
     <div data-bind="with: selectedLeague()">
-        <ul class="team-list" data-bind="foreach: standing">
-            <li class="team-list__element" data-bind="with: ">
-                <div class="team-list__name"></div>
-                <div class="team-list__shortname"></div>
-                <div class="team-list__value"></div>
+        <ul class="team-list" data-bind="foreach: teams">
+            <li class="team-list__element">
+                <label class="team-list__favorite">
+                    <input type="checkbox" data-bind="value: name, checked: $root.favorite"> add to fav
+                </label>
+                <div class="team-list__image-container">
+                    <img class="team-list__image" data-bind="attr: { src: crestUrl}">
+                </div>
+                <div class="team-list__name">
+                    <span data-bind="text: name"></span>
+                </div>
+                <div data-bind="visible: shortName" class="team-list__shortname">
+                    short name: <span data-bind="text: shortName"></span>
+                </div>
+                <div class="team-list__value" data-bind="visible: squadMarketValue">
+                    squad Market Value: <span data-bind="text: squadMarketValue"></span>
+                </div>
             </li>
         </ul>
     </div>

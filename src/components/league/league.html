@@ -1,5 +1,5 @@
 <div class="league">
-    <h1 class="league__title" data-bind="with: selectedLeague()"><span data-bind="text: leagueCaption"></span> table</h1>
+    <h1 class="league__title"><span data-bind="text: selectedLeagueName()"></span> table</h1>
     <select class="select" data-bind="options: leagues(), value: selectedLeagueName"></select>
     <table class="league-table" data-bind="with: selectedLeague()">
         <thead >
