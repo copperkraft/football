@@ -7,14 +7,14 @@ define(['ko'], function(ko) {
         "German 1. Bundesliga": "BL1",
         "Spanish Primera": "PD",
         "Italian Serie A": "SA",
-        "French League 1": "EL1"
+        "French League 1": "FL1"
     };
     let leagueIds = ko.observable({
         "English Premier League": 426,
         "German 1. Bundesliga": 430,
         "Spanish Primera": 436,
         "Italian Serie A": 438,
-        "French League 1": 428
+        "French League 1": 434
     });
 
     (function () {

@@ -2,12 +2,13 @@
     <h1 class="league__title"><span data-bind="text: selectedLeagueName()"></span> teams</h1>
     <select class="select" data-bind="options: leagues(), value: selectedLeagueName"></select>
 
-    <div data-bind="with: selectedLeague()">
+    <div data-bind="with: selectedLeagueTeams()">
         <ul class="team-list" data-bind="foreach: teams">
             <li class="team-list__element">
-                <label class="team-list__favorite">
-                    <input type="checkbox" data-bind="value: name, checked: $root.favorite"> add to fav
-                </label>
+                <button class="team-list__favorite"
+                        data-bind="click: data => $component.toggleState(data.name), css: {'team-list__favorite--selected': $component.isSelected(name)}">
+                    add to fav
+                </button>
                 <div class="team-list__image-container">
                     <img class="team-list__image" data-bind="attr: { src: crestUrl}">
                 </div>

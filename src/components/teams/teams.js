@@ -3,18 +3,21 @@
  */
 define(['ko', 'text!./teams.html', 'leagueModel'], function(ko, template, leagueModel) {
     function TeamsViewModel() {
-        localStorage.favorite = '[]';
+        this.favorite = ko.observable({'Hull City FC': true});
+
+        this.isSelected = function (name) {
+            return this.favorite()[name];
+        };
+
+        this.toggleState = function (name) {
+            this.favorite()[name] = !this.favorite()[name];
+        };
+
+
+
         this.leagues = leagueModel.list;
         this.selectedLeagueName = ko.observable(leagueModel.list()[0]);
-
-        this.favorite = ko.observableArray(['name', 'Hull City FC']);
-
-        this.teams = ko.computed(function() {
-            return 0;
-        }, this);
-
-
-        this.selectedLeague = ko.computed(function() {
+        this.selectedLeagueTeams = ko.computed(function() {
             return leagueModel.loadTeams(this.selectedLeagueName());
         }, this);
     }
